@@ -48,26 +48,39 @@ def main():
             EC.presence_of_element_located((By.ID, "dataTable"))
         )
 
-        base = driver.find_elements_by_class_name("stat-chooser")
+        base = driver.find_element_by_class_name("stat-chooser")
+        CharBase = base.find_elements_by_tag_name("ion-label")
 
         tabs = ["test"]
-        for tab in base:
+        for tab in CharBase:
             tabs.append(tab.text)
         tabs.pop(0)
-
-        
-        stats = driver.find_element_by_class_name("stat-row")
-        statEntry = stats.find_elements_by_class_name("stat-entry")
-
-        for statTree in tabs:
-            base.__setattr__("value", statTree)
+        """
+        Chartab[0][0] = 
+        i = 0
+        for tab in tabs:
+            driver.find_element_by_class_name("stat-chooser").__setattr__("value", tab)
+            stats = driver.find_element_by_class_name("stat-row")
+            statEntry = stats.find_elements_by_class_name("stat-entry")
             
+            for entry in statEntry:
+        """     
 
 
 
-        #data = driver.find_elements_by_id(id_="video-title")
 
-        write_out(strn) #log outfile
+        """
+        strn = ''
+        for statTree in tabs:
+            driver.find_element_by_class_name("stat-chooser").__setattr__("value", statTree)
+            stats = driver.find_element_by_class_name("stat-row")
+            statEntry = stats.find_elements_by_class_name("stat-entry")
+            for entry in statEntry:
+                strn += entry.text
+
+        """
+        #print(strn)
+        #write_out(strn) #log outfile
 
 
 
