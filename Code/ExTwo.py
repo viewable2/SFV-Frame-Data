@@ -51,12 +51,21 @@ def main():
         base = driver.find_element_by_class_name("stat-chooser")
         CharBase = base.find_elements_by_tag_name("ion-label")
 
-        tabs = ["test"]
+        tabs = []
         for tab in CharBase:
             tabs.append(tab.text)
-        tabs.pop(0)
+
+        arra = []
+        arrat.insert(0,tabs)
+
+        x = len(tabs)
+
+
+        print(arrat)
+        print(len(arrat))
+
+
         """
-        Chartab[0][0] = 
         i = 0
         for tab in tabs:
             driver.find_element_by_class_name("stat-chooser").__setattr__("value", tab)
@@ -64,10 +73,7 @@ def main():
             statEntry = stats.find_elements_by_class_name("stat-entry")
             
             for entry in statEntry:
-        """     
-
-
-
+        """
 
         """
         strn = ''
@@ -77,9 +83,8 @@ def main():
             statEntry = stats.find_elements_by_class_name("stat-entry")
             for entry in statEntry:
                 strn += entry.text
-
         """
-        #print(strn)
+
         #write_out(strn) #log outfile
 
 
